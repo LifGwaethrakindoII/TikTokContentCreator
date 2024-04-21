@@ -181,7 +181,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "<color=#e15c63>function</color> foo() {\n    <color=#e15c63><color=#9d80ac>var</color></color>
+    a = 10;\n    console.log(a);\n}\nfoo();"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
   m_sharedMaterial: {fileID: -1886010754750850565, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
@@ -375,19 +376,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    language: 0
+    language: 4
     difficulty: 0
-    topic: 
-    question: Which keyword is used to declare a function in C?
-    code: 
-    optionA: method
-    optionB: function
-    optionC: def
-    optionD: void
-    explanation: In C, the 'void' keyword is used to declare a function that does
-      not return a value.
+    topic: Functions
+    question: What will be the output of the following code?
+    optionA: 10
+    optionB: undefined
+    optionC: ReferenceError
+    optionD: SyntaxError
+    explanation: The code defines a function foo that declares a variable a and assigns
+      it the value 10. The function then logs the value of a, which is 10.
+    code: "function foo() {\n    var a = 10;\n    console.log(a);\n}\nfoo();"
     explanationCode: 
-    correctAnswer: 3
+    correctAnswer: 0
   typingDuration: 0.05
   fadeInDuration: 0.7
   fadeOutDuration: 0.3
@@ -606,7 +607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: d) void
+  m_text: d) SyntaxError
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
   m_sharedMaterial: {fileID: -1886010754750850565, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
@@ -1091,7 +1092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 500, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624117089
@@ -1128,7 +1129,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Topic: -'
+  m_text: 'Topic: Functions'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
   m_sharedMaterial: {fileID: -1886010754750850565, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
@@ -1434,8 +1435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: In C, the 'void' keyword is used to declare a function that does not return
-    a value.
+  m_text: What will be the output of the following code?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
   m_sharedMaterial: {fileID: -1886010754750850565, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
@@ -1614,7 +1614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 500, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &935447524
@@ -1917,7 +1917,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: b) function
+  m_text: b) undefined
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
   m_sharedMaterial: {fileID: -1886010754750850565, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
@@ -2191,7 +2191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1154970844
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2208,9 +2208,9 @@ RectTransform:
   m_Father: {fileID: 853633041}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -1173.3334}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 800}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1154970845
@@ -2323,7 +2323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: c) def
+  m_text: c) ReferenceError
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
   m_sharedMaterial: {fileID: -1886010754750850565, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
@@ -2661,7 +2661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 500, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1300613413
@@ -2706,7 +2706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Language: C'
+  m_text: 'Language: JavaScript'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
   m_sharedMaterial: {fileID: -1886010754750850565, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
@@ -2968,7 +2968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 500, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1444853730
@@ -3566,7 +3566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: a) method
+  m_text: a) 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}
   m_sharedMaterial: {fileID: -1886010754750850565, guid: a95982dbbd217644b84e8ac4cd6af8bf, type: 2}

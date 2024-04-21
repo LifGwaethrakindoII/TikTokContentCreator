@@ -240,8 +240,19 @@ namespace TikTokContentCreator
         private void BeginOptionsRoutine(Action onOptionsEnd = null)
         {
             Color c = Color.white;
+            float additionalWait = 0.0f;
 
-            StartCoroutine(Coroutines.RunAllCoroutines(onOptionsEnd,
+            additionalWait += optionALabel.text.CalculateReadTime();
+            additionalWait += optionBLabel.text.CalculateReadTime();
+            additionalWait += optionCLabel.text.CalculateReadTime();
+            additionalWait += optionDLabel.text.CalculateReadTime();
+
+            Action OnOptionsEnd = () =>
+            {
+                Wait(additionalWait, onOptionsEnd);
+            };
+
+            StartCoroutine(Coroutines.RunAllCoroutines(OnOptionsEnd,
                 optionALabel.LerpColor(c, fadeInDuration, Math.EaseOutSine),
                 optionBLabel.LerpColor(c, fadeInDuration, Math.EaseOutSine),
                 optionCLabel.LerpColor(c, fadeInDuration, Math.EaseOutSine),
@@ -434,9 +445,11 @@ namespace TikTokContentCreator
             bool tagOpen = false;
             _textMesh.text = string.Empty;
 
-            foreach(char character in _text)
+            for(int i = 0; i < _text.Length; i++)
             {
-                if (character == '<' && !tagOpen)
+                char character = _text[i];
+
+                if (character == '<' && (_text[i + 1] == 'c' || _text[i + 1] == '/') && !tagOpen)
                 {
                     tagBuilder.Clear();
                     tagBuilder.Append(character);

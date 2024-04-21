@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -194,7 +195,7 @@ namespace TikTokContentCreator
                 builder.Append("</color>");
                 builder.Append("</i>");
                 builder.Append("</b>");
-                _text.Replace(word, builder.ToString());
+                _text.ReplaceExactWord(word, builder.ToString());
                 builder.Clear();
             };
 
@@ -233,7 +234,7 @@ namespace TikTokContentCreator
                     builder.Append(">");
                     builder.Append(keyword);
                     builder.Append("</color>");
-                    result = result.Replace(keyword, builder.ToString());
+                    result = result.ReplaceExactWord(keyword, builder.ToString());
                     builder.Clear();
                 }
             }
@@ -247,7 +248,7 @@ namespace TikTokContentCreator
                     builder.Append(">");
                     builder.Append(variable);
                     builder.Append("</color>");
-                    result = result.Replace(variable, builder.ToString());
+                    result = result.ReplaceExactWord(variable, builder.ToString());
                     builder.Clear();
                 }
             }
@@ -257,8 +258,14 @@ namespace TikTokContentCreator
 
         public static bool ContainsExactWord(this string input, string word)
         {
-            string pattern = "\\b" + Regex.Escape(word) + "\\b";
+            string pattern = "(?<!\\w)" + Regex.Escape(word) + "(?!\\w)";
             return Regex.IsMatch(input, pattern);
+        }
+
+        public static string ReplaceExactWord(this string input, string word, string replacement)
+        {
+            string pattern = "\\b" + Regex.Escape(word) + "\\b";
+            return Regex.Replace(input, pattern, replacement);
         }
     }
 }

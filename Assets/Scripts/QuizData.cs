@@ -25,13 +25,13 @@ namespace TikTokContentCreator
         public Difficulty difficulty;
         public string topic;
         public string question;
-        public string code;
         public string optionA;
         public string optionB;
         public string optionC;
         public string optionD;
         public string explanation;
-        public string explanationCode;
+        [TextArea] public string code;
+        [TextArea] public string explanationCode;
         public int correctAnswer;
 
         public string FormattedLanguage()
